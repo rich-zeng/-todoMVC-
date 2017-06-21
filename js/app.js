@@ -43,6 +43,18 @@
 		$scope.save = function () {
 			$scope.isEditId = -1;
 		}
+		//切换任务完成状态与否
+
+		//批量切换任务完成状态与否
+		$scope.toggleAll = false;
+		$scope.selectAll = function(){
+			for(var i=0;i<$scope.todos.length;i++){
+				var item = $scope.todos[i];
+				item.completed = $scope.toggleAll;
+			}
+		}
+
+
 	}])
 
 })(window);
