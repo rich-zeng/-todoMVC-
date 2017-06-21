@@ -54,7 +54,26 @@
 			}
 		}
 
-
+		//显示未完成任务数
+		$scope.getActive = function () {
+			var count = 0;
+			for(var i=0;i<$scope.todos.length;i++){
+				var item = $scope.todos[i];
+				if(item.completed == false){
+					count++
+				}
+			}
+			return count;
+		}
+		//清除所有已完成的任务
+		$scope.clearAll = function () {
+			for(var i= $scope.todos.length-1;i>=0;i--){
+				var item = $scope.todos[i];
+				if(item.completed){
+					$scope.todos.splice(i,1);
+				}
+			}
+		}
 	}])
 
 })(window);
