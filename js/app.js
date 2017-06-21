@@ -25,6 +25,16 @@
 			})
 			$scope.newTodo = '';
 		}
+		//删除任务
+		$scope.remove = function (id) {
+			for(var i=0;i<$scope.todos.length;i++){
+				var item = $scope.todos[i];
+				if(item.id == id){
+					$scope.todos.splice(i,1);
+					return;
+				}
+			}
+		}
 
 	}])
 
