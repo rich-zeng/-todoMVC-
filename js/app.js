@@ -35,7 +35,14 @@
 				}
 			}
 		}
-
+		//修改任务内容
+		$scope.isEditId = -1
+		$scope.edit = function (id) {
+			$scope.isEditId = id;
+		}
+		$scope.save = function () {
+			$scope.isEditId = -1;
+		}
 	}])
 
 })(window);
